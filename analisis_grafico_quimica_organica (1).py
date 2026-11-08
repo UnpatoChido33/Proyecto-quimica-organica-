@@ -488,7 +488,7 @@ ax.set_ylabel("Frecuencia")
 sns.despine()
 guardar("g12_delta_pm")
 
-#Exportar
+#Se Exporta
 df.drop(columns=["ref_S", "ref_P"], errors="ignore").to_csv(
     "tabla_limpia.csv", index=False, encoding="utf-8-sig")
 quim.to_csv("sustancias_unicas.csv", index=False, encoding="utf-8-sig")
