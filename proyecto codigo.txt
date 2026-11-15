@@ -1,0 +1,422 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+% --- PAQUETES ESENCIALES ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{float}
+
+% --- CONFIGURACIÓN DE MÁRGENES Y DISEÑO ---
+\geometry{
+  top=2.2cm,
+  bottom=2.2cm,
+  left=1.6cm,
+  right=1.6cm,
+  columnsep=0.6cm
+}
+
+% --- COLORES INSTITUCIONALES ---
+\definecolor{udblue}{RGB}{0, 51, 102}
+\definecolor{accentorange}{RGB}{217, 119, 6}
+\definecolor{graytext}{RGB}{90, 90, 90}
+
+% --- ENCABEZADOS Y PIES DE PÁGINA (ESTILO PLANTILLA FAMARENA-UD) ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textit{Proyecto de Química Orgánica (2026)}}
+\fancyhead[R]{\footnotesize\textit{Caracterización fisicoquímica y análisis de reacciones y obtenciones de compuestos}}
+\fancyfoot[L]{\footnotesize Impreso: 14 de noviembre de 2026}
+\fancyfoot[C]{\footnotesize \thepage}
+\fancyfoot[R]{\footnotesize \copyright 2026 por los Autores. Proyecto final, bajo protección de difusión}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Primera página con estilo propio
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[L]{\footnotesize\textbf{Ingeniería Ambiental, FAMARENA-UD}}
+  \fancyhead[R]{\footnotesize\textbf{QUIMORG 2026-III}}
+  \fancyfoot[L]{\footnotesize Impreso: 14 de noviembre de 2026\\ \textit{*Corresponding Author: Lenin Mauricio Veloza Plata <lmvelozap@udistrital.edu.co>}}
+  \fancyfoot[R]{\footnotesize \copyright 2026 por los Autores. Publicado para proyecto final,\\ bajo protección de difusión}
+  \renewcommand{\headrulewidth}{0.8pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% --- FORMATO DE SECCIONES ---
+\titleformat{\section}
+  {\normalfont\fontsize{10.5}{12}\bfseries\color{udblue}}
+  {\thesection.}{0.5em}{\MakeUppercase}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{9.5}{11}\bfseries}
+  {\thesubsection.}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{9}{10.5}\bfseries\itshape}
+  {\thesubsubsection}{0.5em}{}
+
+% --- FORMATO DE LEYENDAS (CUADROS Y FIGURAS) ---
+\captionsetup[table]{name=Cuadro,labelsep=period,font=footnotesize,labelfont=bf}
+\captionsetup[figure]{name=Figura,labelsep=period,font=footnotesize,labelfont=bf}
+
+\begin{document}
+\thispagestyle{firstpage}
+
+% --- BLOQUE DE TÍTULO Y AUTORES (ORDENADOS POR CÓDIGO DEL MÁS ANTIGUO AL MÁS RECIENTE) ---
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \vspace{-0.4cm}
+    {\small\textit{Research Article}} \\ 
+    {\LARGE\bfseries Caracterización fisicoquímica y análisis de reacciones y obtenciones de compuestos} \\ 
+    {\normalsize Juan Pablo Vargas$^{1}$, Moisés David Acuña Salas$^{1}$, Maira Alejandra Candela Useche$^{1}$, Lenin Mauricio Veloza Plata$^{1*}$, Gabriela Alejandra González López$^{1}$} \\ 
+    {\small $^1$Proyecto Curricular de Ingeniería Ambiental, Facultad de Medio Ambiente y Recursos Naturales (FAMARENA), Universidad Distrital Francisco José de Caldas, Bogotá D.C., Colombia.} \\
+    {\footnotesize \textit{Códigos:} 20251180101, 20251180116, 20251180118, 20251180133, 20261180102. \\
+    \textit{Correos electrónicos:} jpvargasp@udistrital.edu.co, mdacunas@udistrital.edu.co, macandelau@udistrital.edu.co, lmvelozap@udistrital.edu.co, gagonzalezl@udistrital.edu.co.} \\ 
+    \hrule
+    \vspace{0.25cm}
+    \noindent\textbf{Resumen} \\ 0.1cm
+    \small El grupo carbonilo ($\mathrm{C=O}$) constituye uno de los centros reactivos más versátiles en la química orgánica ambiental e industrial debido a su marcada polarización electrónica y capacidad de participar en procesos de adición nucleofílica, condensación y oxidorreducción. En el presente estudio se realizó una caracterización fisicoquímica sistemática y un análisis mecanístico de 200 transformaciones químicas registradas en la plataforma CAS SciFinder para diez compuestos carbonílicos representativos: cinco aldehídos (formaldehído, acetaldehído, propanal, benzaldehído y cinamaldehído) y cinco cetonas (acetona, butanona, ciclohexanona, acetofenona y benzofenona). Para cada sustancia se determinaron ocho parámetros fisicoquímicos fundamentales y se documentaron diez reacciones como sustrato ($n=100$) y diez rutas de obtención como producto ($n=100$), registrando números de registro CAS, catalizadores, disolventes, temperatura, medio de reacción y clasificación mecanística. Los resultados fisicoquímicos evidencian una estrecha correlación entre el incremento de la masa molar, la aromaticidad y la caída exponencial de la volatilidad y la solubilidad acuosa, pasando de presiones de vapor de $5{,}19 \times 10^{5}\ \mathrm{Pa}$ en el formaldehído a $0{,}151\ \mathrm{Pa}$ en la benzofenona. Desde el punto de vista mecanístico, el $82{,}0\%$ de las reacciones donde los carbonilos actúan como sustratos corresponden a adiciones nucleofílicas (destacándose la aminación reductiva y condensaciones aldólicas en medios básico y ácido), mientras que las síntesis de estos compuestos están dominadas por oxidaciones selectivas ($38{,}0\%$) y eliminaciones ($18{,}0\%$) en medio neutro. Esta sistematización proporciona una base cuantitativa para predecir el destino ambiental, la partición entre fases y la reactividad sintética de aldehídos y cetonas. \\ 
+    \noindent\textbf{Palabras clave:} Compuestos carbonílicos, adición nucleofílica, CAS SciFinder, volatilidad, reactividad orgánica.
+    \vspace{0.3cm}
+    \hrule
+    \vspace{0.35cm}
+  \end{@twocolumnfalse}
+]
+
+% --- 1. INTRODUCCIÓN ---
+\section{Introducción}
+Los compuestos carbonílicos, específicamente los aldehídos ($\mathrm{R-CHO}$) y las cetonas ($\mathrm{R-CO-R'}$), desempeñan un papel central tanto en la síntesis orgánica moderna como en la química atmosférica y ambiental \cite{Clayden2012, Carey2014}. La presencia del doble enlace carbono-oxígeno ($\mathrm{C=O}$), fuertemente polarizado hacia el átomo de oxígeno debido a su mayor electronegatividad ($\chi_{\mathrm{O}} = 3{,}44$ frente a $\chi_{\mathrm{C}} = 2{,}55$), genera una densidad de carga parcial positiva ($\delta^+$) sobre el carbono carbonílico y una densidad negativa ($\delta^-$) sobre el oxígeno \cite{McMurry2016}. Esta distribución electrónica convierte al carbono carbonílico en un centro electrofílico susceptible al ataque de especies nucleofílicas, mientras que los hidrógenos unidos al carbono $\alpha$ adquieren un carácter débilmente ácido ($\mathrm{p}K_a \approx 16\text{--}26$) que facilita la formación de iones enolato estabilizados por resonancia \cite{Wade2017}.
+
+Desde una perspectiva ambiental y de ingeniería, el conocimiento preciso de las propiedades fisicoquímicas de los aldehídos y cetonas de bajo y alto peso molecular es indispensable para evaluar su partición entre fases (agua-aire-suelo), su persistencia, su toxicidad y su participación en la formación de smog fotoquímico y ozono troposférico \cite{Atkinson2000}. Asimismo, en procesos de remediación, síntesis verde y transformación de contaminantes orgánicos, resulta crítico identificar qué condiciones de pH (medio ácido, básico, neutro o apolar), catalizadores y disolventes gobiernan tanto la degradación (reactividad como sustrato) como la generación (vías de obtención) de estas especies \cite{Smith2020}.
+
+El objetivo del presente trabajo es consolidar y analizar comparativamente las propiedades fisicoquímicas y el comportamiento mecanístico de diez compuestos carbonílicos seleccionados —acetaldehído, acetona, benzaldehído, ciclohexanona, butanona (metil etil cetona), propanaldehído (propanal), formaldehído, acetofenona, benzofenona y cinamaldehído—, empleando información experimental validada de la base de datos CAS SciFinder.
+
+% --- 2. REVISIÓN LITERATURA ---
+\section{Revisión Literatura}
+La reactividad diferencial entre aldehídos y cetonas ha sido ampliamente documentada en la literatura química en función de dos factores estructurales primordiales: el impedimento estérico y los efectos electrónicos inductivos y de resonancia \cite{Carey2014, Clayden2012}. En términos generales, los aldehídos presentan una mayor electrofilia que las cetonas debido a que poseen únicamente un grupo alquilo o arilo donador de densidad electrónica por efecto inductivo ($+I$) o hiperconjugación, además de ofrecer menor congestión estérica en el estado de transición tetraédrico durante la adición nucleofílica \cite{Wade2017}.
+
+Por otra parte, la incorporación de anillos aromáticos conjugados directamente al grupo carbonilo —como ocurre en el benzaldehído, la acetofenona, la benzofenona y el cinamaldehído (sistema $\alpha,\beta$-insaturado)— introduce una estabilización adicional por deslocalización electrónica ($\pi$-conjugación) en el estado basal \cite{McMurry2016}. Esta deslocalización reduce parcialmente la electrofilia del carbono carbonílico frente a sus análogos alifáticos, modifica sustancialmente el momento dipolar ($\mu$) e incrementa las fuerzas intermoleculares de van der Waals (dispersión de London e interacciones dipolo-dipolo), lo cual se traduce en puntos de ebullición elevados y presiones de vapor significativamente reducidas \cite{Haynes2016}.
+
+En el ámbito de la quimioinformática, los sistemas de indexación química basados en identificadores únicos (\textit{CAS Registry Numbers} y \textit{CAS Reaction Numbers}) permiten rastrear de manera trazable esquemas sintéticos validados experimentalmente, facilitando el análisis estadístico de tendencias en catálisis homogénea y heterogénea, selección de disolventes y selectividad mecanística en síntesis orgánica \cite{Warr2011}.
+
+% --- 3. METODOLOGÍA ---
+\section{Metodología}
+El estudio se estructuró en un flujo de trabajo quimioinformático y computacional dividido en cuatro etapas secuenciales: recopilación de datos experimentales, curaduría y control de versiones, análisis estadístico y modelado visual, y composición editorial del manuscrito.
+
+\subsection{Curaduría de Datos en CAS SciFinder y Control de Versiones}
+Se seleccionaron diez compuestos carbonílicos representativos: cinco aldehídos (formaldehído, acetaldehído, propanal, benzaldehído y cinamaldehído) y cinco cetonas (acetona, butanona, ciclohexanona, acetofenona y benzofenona). Para cada sustancia se extrajeron de la plataforma CAS SciFinder ocho parámetros fisicoquímicos fundamentales: peso molecular ($\mathrm{PM}$, en $\mathrm{g/mol}$), punto de fusión ($\mathrm{PF}$, en $^\circ\mathrm{C}$), punto de ebullición normal ($\mathrm{PE}$, en $^\circ\mathrm{C}$), densidad relativa ($\rho$, en $\mathrm{g/cm^3}$), constante de acidez ($\mathrm{p}K_a$), momento dipolar molecular ($\mu$, en Debyes, $\mathrm{D}$), solubilidad en agua ($\mathrm{SA}$, en $\mathrm{g/L}$) y presión de vapor a $298\ \mathrm{K}$ ($P_v$, en $\mathrm{Pa}$) \cite{Haynes2016, Warr2011}.
+
+Posteriormente, se documentaron 200 esquemas de reacción trazables mediante su identificador único (\textit{CAS Reaction Number}), distribuidos en diez reacciones de transformación como sustrato ($N = 100$) y diez rutas de obtención como producto ($N = 100$) por cada compuesto. En cada registro se tabularon los reactivos auxiliares, catalizadores ($\mathrm{C_1, C_2, C_3}$), disolvente, temperatura de operación ($T_r$, en $^\circ\mathrm{C}$), medio de reacción (ácido, básico, neutro o apolar), nombre de la reacción y categoría mecanística. La base de datos consolidada y los archivos del proyecto se alojaron en un repositorio colaborativo en \textbf{GitHub} para garantizar la trazabilidad, integridad y control de versiones entre los integrantes del equipo.
+
+\subsection{Procesamiento Estadístico en Google Colab y Visualización en Power BI}
+Una vez estructurada la matriz de datos, se implementaron rutinas de limpieza, normalización de unidades y análisis estadístico descriptivo en el entorno de programación en la nube \textbf{Google Colab} (Python), evaluando frecuencias relativas por tipo de mecanismo, distribución por medio de reacción y tendencias fisicoquímicas según la masa molar y la estructura aromática.
+
+De manera complementaria, la base de datos depurada se conectó a \textbf{Microsoft Power BI} para construir tableros interactivos de inteligencia de datos y generar las gráficas comparativas de volatilidad, puntos de ebullición y perfiles mecanísticos que respaldan el análisis de resultados.
+
+\subsection{Composición Tipográfica en LaTeX}
+Finalmente, la redacción técnica, el estructurado de cuadros comparativos, la inserción de gráficos vectoriales y la gestión automatizada de referencias bibliográficas en estilo IEEE se ejecutaron mediante composición tipográfica en \textbf{LaTeX}, asegurando el cumplimiento estricto de los estándares editoriales establecidos para la publicación científica.
+
+% --- 4. RESULTADOS Y DISCUSIÓN ---
+\section{Resultados y Discusión}
+
+\subsection{Análisis Comparativo de Propiedades Fisicoquímicas}
+Los parámetros fisicoquímicos recopilados para los diez compuestos carbonílicos estudiados se consolidan en el Cuadro~\ref{tab:propiedades}, mientras que la Figura~\ref{fig:volatilidad} ilustra la relación inversa entre el punto de ebullición normal y la presión de vapor ($\log_{10} P_v$) al incrementarse la masa molar y la aromaticidad.
+
+\begin{table*}[t]
+  \centering
+  \caption{Propiedades fisicoquímicas fundamentales y números de registro CAS de los diez compuestos carbonílicos analizados.}
+  \label{tab:propiedades}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{l l c c c c c c c c}
+    \toprule
+    \textbf{Compuesto} & \textbf{CAS} & \textbf{PM} & \textbf{PF} & \textbf{PE} & \textbf{Densidad} & $\mathbf{pK_a}$ & \textbf{MD} & \textbf{Sol. Agua} & $\mathbf{P_v\ (298\ K)}$ \\
+     & & ($\mathrm{g/mol}$) & ($^\circ\mathrm{C}$) & ($^\circ\mathrm{C}$) & ($\mathrm{g/cm^3}$) & & ($\mathrm{D}$) & ($\mathrm{g/L}$) & ($\mathrm{Pa}$) \\
+    \midrule
+    Formaldehído & 50-00-0 & 30,03 & -92,0 & -19,5 & 0,800 & 13,30 & 2,33 & 400,0 & $5{,}19 \times 10^{5}$ \\
+    Acetaldehído & 75-07-0 & 44,05 & -123,5 & 21,0 & 0,788 & 16,70 & 2,75 & 1000,0 & $1{,}20 \times 10^{5}$ \\
+    Propanal & 123-38-6 & 58,08 & -81,0 & 49,0 & 0,866 & -- & 2,86 & 300,0 & -- \\
+    Acetona & 67-64-1 & 58,08 & -94,8 & 56,0 & 0,790 & 26,00 & 2,91 & 1000,0 & $3{,}60 \times 10^{4}$ \\
+    Butanona (MEK) & 78-93-3 & 72,11 & -86,0 & 79,6 & 0,805 & 24,40 & 3,18 & 280,0 & $1{,}31 \times 10^{4}$ \\
+    Ciclohexanona & 108-94-1 & 98,14 & -31,0 & 155,6 & 0,948 & 26,40 & 3,25 & 96,0 & $6{,}40 \times 10^{2}$ \\
+    Benzaldehído & 100-52-7 & 106,12 & -26,0 & 179,0 & 1,050 & 14,90 & 3,42 & 3,0 & $1{,}60 \times 10^{2}$ \\
+    Acetofenona & 98-86-2 & 120,15 & 20,5 & 202,0 & 1,033 & 18,30 & 3,14 & 8,86 & $1{,}20 \times 10^{2}$ \\
+    Cinamaldehído & 104-55-2 & 132,16 & -7,5 & 248,0 & 1,052 & -- & 5,10 & 1,10 & $3{,}85 \times 10^{0}$ \\
+    Benzofenona & 119-61-9 & 182,22 & 48,5 & 305,4 & 1,111 & 9,25 & 1,79 & 0,137 & $1{,}51 \times 10^{-1}$ \\
+    \bottomrule
+  \end{tabularx}
+\end{table*}
+
+\begin{figure}[h]
+  \centering
+  % --- FIGURA 1: GRÁFICA DE DOBLE SERIE (VOLATILIDAD VS PUNTO DE EBULLICIÓN) ---
+  \setlength{\unitlength}{1mm}
+  \begin{picture}(82,56)
+    % Ejes
+    \put(11,12){\line(1,0){60}}
+    \put(11,12){\line(0,1){38}}
+    \put(71,12){\line(0,1){38}}
+    % Etiquetas eje Y izquierdo (PE °C)
+    \put(1,12){\tiny -20}
+    \put(2,22){\tiny 80}
+    \put(1,33){\tiny 180}
+    \put(1,44){\tiny 280}
+    \put(1,51){\scriptsize \textbf{PE ($^\circ$C)}}
+    % Etiquetas eje Y derecho (log10 Pv)
+    \put(72,15){\tiny $10^{-1}$}
+    \put(72,25){\tiny $10^{1}$}
+    \put(72,35){\tiny $10^{3}$}
+    \put(72,45){\tiny $10^{5}$}
+    \put(64,51){\scriptsize \textbf{$\mathbf{P_v}$ (Pa)}}
+    % Líneas guía
+    \linethickness{0.1pt}
+    \color{gray!35}
+    \put(11,22){\line(1,0){60}}
+    \put(11,33){\line(1,0){60}}
+    \put(11,44){\line(1,0){60}}
+    % Barras de PE
+    \color{accentorange!75}
+    \put(13.5,12){\rule{3.5mm}{2.0mm}}
+    \put(19.5,12){\rule{3.5mm}{4.3mm}}
+    \put(25.5,12){\rule{3.5mm}{8.0mm}}
+    \put(31.5,12){\rule{3.5mm}{10.5mm}}
+    \put(37.5,12){\rule{3.5mm}{18.5mm}}
+    \put(43.5,12){\rule{3.5mm}{21.0mm}}
+    \put(49.5,12){\rule{3.5mm}{23.4mm}}
+    \put(55.5,12){\rule{3.5mm}{28.2mm}}
+    \put(61.5,12){\rule{3.5mm}{34.2mm}}
+    % Línea de tendencia log10(Pv)
+    \linethickness{0.9pt}
+    \color{udblue}
+    \qbezier(15.2,48.2)(18.2,46.6)(21.2,45.1)
+    \qbezier(21.2,45.1)(24.2,43.8)(27.2,42.6)
+    \qbezier(27.2,42.6)(30.2,41.6)(33.2,40.5)
+    \qbezier(33.2,40.5)(36.2,37.3)(39.2,34.2)
+    \qbezier(39.2,34.2)(42.2,32.7)(45.2,31.3)
+    \qbezier(45.2,31.3)(48.2,31.0)(51.2,30.7)
+    \qbezier(51.2,30.7)(54.2,27.1)(57.2,23.6)
+    \qbezier(57.2,23.6)(60.2,20.2)(63.2,16.8)
+    % Puntos de log10(Pv)
+    \put(15.2,48.2){\circle*{1.5}}
+    \put(21.2,45.1){\circle*{1.5}}
+    \put(27.2,42.6){\circle*{1.5}}
+    \put(33.2,40.5){\circle*{1.5}}
+    \put(39.2,34.2){\circle*{1.5}}
+    \put(45.2,31.3){\circle*{1.5}}
+    \put(51.2,30.7){\circle*{1.5}}
+    \put(57.2,23.6){\circle*{1.5}}
+    \put(63.2,16.8){\circle*{1.5}}
+    % Etiquetas eje X
+    \color{black}
+    \put(13,8){\tiny For}
+    \put(19,8){\tiny Ace}
+    \put(25,8){\tiny Atn}
+    \put(31,8){\tiny But}
+    \put(37,8){\tiny Cic}
+    \put(43,8){\tiny Bza}
+    \put(49,8){\tiny Acf}
+    \put(55,8){\tiny Cin}
+    \put(61,8){\tiny Bzf}
+    % Leyenda
+    \color{accentorange!75}\put(14,44){\rule{2.2mm}{2.2mm}}
+    \color{black}\put(17,44){\tiny Punto Ebullición}
+    \color{udblue}\put(14,40){\rule{2.2mm}{0.8mm}}
+    \color{black}\put(17,39.5){\tiny Presión Vapor (log)}
+  \end{picture}
+  \caption{Variación inversa entre el punto de ebullición normal (barras) y la presión de vapor a 298 K (línea) al incrementarse la masa molar y la aromaticidad.}
+  \label{fig:volatilidad}
+\end{figure}
+
+Como se aprecia en el Cuadro~\ref{tab:propiedades} y en la Figura~\ref{fig:volatilidad}, los carbonilos alifáticos de bajo peso molecular ($\mathrm{PM} \le 72{,}11\ \mathrm{g/mol}$) exhiben densidades inferiores a la del agua ($0{,}788\text{--}0{,}866\ \mathrm{g/cm^3}$) y elevadas solubilidades acuosas ($280\text{--}1000\ \mathrm{g/L}$), explicadas por la capacidad del oxígeno carbonílico para actuar como aceptor de puentes de hidrógeno con las moléculas de $\mathrm{H_2O}$ sin que predomine una cadena hidrocarbonada hidrofóbica. Por el contrario, al incorporar anillos bencénicos (benzaldehído, acetofenona, cinamaldehído y benzofenona), la densidad supera la unidad ($1{,}033\text{--}1{,}111\ \mathrm{g/cm^3}$) y la solubilidad en agua cae drásticamente hasta $0{,}137\ \mathrm{g/L}$ en la benzofenona, debido al predominio del carácter apolar de los grupos fenilo.
+
+Asimismo, la presión de vapor a $298\ \mathrm{K}$ disminuye seis órdenes de magnitud al aumentar el peso molecular y el área superficial polarizable: desde un gas altamente volátil como el formaldehído ($5{,}19 \times 10^{5}\ \mathrm{Pa}$, $\mathrm{PE} = -19{,}5\ ^\circ\mathrm{C}$) hasta un sólido cristalino a temperatura ambiente como la benzofenona ($0{,}151\ \mathrm{Pa}$, $\mathrm{PF} = 48{,}5\ ^\circ\mathrm{C}$, $\mathrm{PE} = 305{,}4\ ^\circ\mathrm{C}$). En cuanto a la polaridad, el cinamaldehído presenta el mayor momento dipolar ($\mu = 5{,}10\ \mathrm{D}$) debido a la extensa conjugación $\pi$ entre el anillo fenílico, el doble enlace olefínico y el grupo formilo terminal, mientras que la benzofenona muestra el menor valor ($\mu = 1{,}79\ \mathrm{D}$) por la simetría parcial y distribución electrónica entre ambos anillos aromáticos.
+
+\subsection{Distribución Mecanística de Reacciones y Obtenciones}
+El análisis de las 200 entradas extraídas de CAS SciFinder revela una marcada asimetría entre los mecanismos mediante los cuales los compuestos carbonílicos se transforman (actuando como sustratos) y aquellos mediante los cuales se sintetizan (actuando como productos), tal como se detalla en el Cuadro~\ref{tab:mecanismos} y se contrasta visualmente en la Figura~\ref{fig:mecanismos}.
+
+\begin{table}[h]
+  \centering
+  \caption{Distribución de tipos de reacción identificados en CAS SciFinder según el rol del compuesto carbonílico ($N = 200$).}
+  \label{tab:mecanismos}
+  \footnotesize
+  \begin{tabular}{l c c c}
+    \toprule
+    \textbf{Tipo de Reacción} & \textbf{Reacciones} & \textbf{Obtenciones} & \textbf{Total} \\
+     & \textbf{(Sustrato)} & \textbf{(Producto)} & \textbf{(\%)} \\
+    \midrule
+    Adición Nucleofílica & 82 & 17 & 99 (49,5\%) \\
+    Oxidación & 1 & 38 & 39 (19,5\%) \\
+    Eliminación & 1 & 18 & 19 (9,5\%) \\
+    Sustitución Nucleofílica & 10 & 8 & 18 (9,0\%) \\
+    Acoplamiento & 0 & 15 & 15 (7,5\%) \\
+    Adición Electrofílica & 3 & 2 & 5 (2,5\%) \\
+    Sustitución Electrofílica & 3 & 0 & 3 (1,5\%) \\
+    Adición Radicalaria & 0 & 1 & 1 (0,5\%) \\
+    Sustitución Radicalaria & 0 & 1 & 1 (0,5\%) \\
+    \midrule
+    \textbf{Total} & \textbf{100} & \textbf{100} & \textbf{200 (100\%)} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  % --- FIGURA 2: GRÁFICO COMPARATIVO DE MECANISMOS ---
+  \setlength{\unitlength}{1mm}
+  \begin{picture}(80,52)
+    % Ejes
+    \put(12,10){\line(1,0){65}}
+    \put(12,10){\line(0,1){38}}
+    % Etiquetas eje Y
+    \put(3,9){\scriptsize 0}
+    \put(2,18){\scriptsize 20}
+    \put(2,27){\scriptsize 40}
+    \put(2,36){\scriptsize 60}
+    \put(2,45){\scriptsize 80}
+    \put(1,49){\scriptsize \textbf{Casos}}
+    % Líneas guía horizontales
+    \linethickness{0.1pt}
+    \color{gray!40}
+    \put(12,19){\line(1,0){65}}
+    \put(12,28){\line(1,0){65}}
+    \put(12,37){\line(1,0){65}}
+    \put(12,46){\line(1,0){65}}
+    % Barras: Sustrato (azul) vs Obtención (naranja)
+    \color{udblue}
+    \put(15,10){\rule{4.5mm}{36.9mm}}
+    \put(15.2,47.5){\tiny 82}
+    \color{accentorange}
+    \put(20,10){\rule{4.5mm}{7.65mm}}
+    \put(20.5,18.2){\tiny 17}
+    \color{udblue}
+    \put(28,10){\rule{4.5mm}{0.6mm}}
+    \put(29,11.2){\tiny 1}
+    \color{accentorange}
+    \put(33,10){\rule{4.5mm}{17.1mm}}
+    \put(33.5,27.8){\tiny 38}
+    \color{udblue}
+    \put(41,10){\rule{4.5mm}{0.6mm}}
+    \put(42,11.2){\tiny 1}
+    \color{accentorange}
+    \put(46,10){\rule{4.5mm}{8.1mm}}
+    \put(46.5,18.8){\tiny 18}
+    \color{udblue}
+    \put(54,10){\rule{4.5mm}{4.5mm}}
+    \put(54.5,15.2){\tiny 10}
+    \color{accentorange}
+    \put(59,10){\rule{4.5mm}{3.6mm}}
+    \put(60,14.2){\tiny 8}
+    \color{udblue}
+    \put(67,10){\rule{4.5mm}{0.2mm}}
+    \put(68,11){\tiny 0}
+    \color{accentorange}
+    \put(72,10){\rule{4.5mm}{6.75mm}}
+    \put(72.5,17.4){\tiny 15}
+    % Etiquetas eje X
+    \color{black}
+    \put(14,6){\tiny Ad.Nuc}
+    \put(28,6){\tiny Oxid.}
+    \put(41,6){\tiny Elim.}
+    \put(53,6){\tiny Sus.Nuc}
+    \put(67,6){\tiny Acopl.}
+    % Leyenda
+    \color{udblue}\put(46,43){\rule{2.5mm}{2.5mm}}
+    \color{black}\put(50,43){\tiny Sustrato ($n=100$)}
+    \color{accentorange}\put(46,39){\rule{2.5mm}{2.5mm}}
+    \color{black}\put(50,39){\tiny Obtención ($n=100$)}
+  \end{picture}
+  \caption{Comparación de frecuencia de los cinco mecanismos principales según el rol del compuesto carbonílico en CAS SciFinder.}
+  \label{fig:mecanismos}
+\end{figure}
+
+Cuando los diez compuestos carbonílicos actúan como \textbf{sustratos}, el $82{,}0\%$ de las reacciones proceden vía \textbf{adición nucleofílica} sobre el carbono electrofílico $\mathrm{C=O}$. Entre las transformaciones específicas más frecuentes destacan:
+\begin{itemize}
+  \item \textbf{Aminación reductiva y formación de iminas (bases de Schiff):} Ataque de aminas primarias o secundarias seguido de deshidratación y reducción selectiva (por ejemplo, empleando triacetoxiborohidruro de sodio o hidrógeno catalítico), representando el mecanismo predilecto para formaldehído, acetaldehído y benzaldehído.
+  \item \textbf{Condensaciones aldólicas y aldólicas cruzadas:} Catalizadas por bases fuertes (como $\mathrm{KOH}$ o $\mathrm{NaOH}$ en metanol/etanol) o ácidos, aprovechando la acidez de los hidrógenos $\alpha$ en acetaldehído, acetona, ciclohexanona y acetofenona para formar enlaces carbono-carbono ($\beta$-hidroxicarbonilos y compuestos $\alpha,\beta$-insaturados).
+  \item \textbf{Protección como acetales y cetales:} Reacción con dioles (como el 1,2-etanodiol) en medio ácido para generar 1,3-dioxolanos cíclicos estables.
+\end{itemize}
+
+Por el contrario, cuando se analizan las \textbf{vías de obtención}, la \textbf{oxidación} ($38{,}0\%$) y la \textbf{eliminación} ($18{,}0\%$) constituyen las rutas sintéticas predominantes. La oxidación selectiva de alcoholes primarios a aldehídos y de alcoholes secundarios a cetonas (utilizando agentes oxidantes como oxígeno molecular con catalizadores metálicos de $\mathrm{Cu}$ o $\mathrm{Pd}$, periodinano de Dess-Martin o complejos de cromo) representa el método más recurrente, seguido de la oxidación de aminas e hidrólisis/eliminación de ésteres, acetales y derivados halogenados. Adicionalmente, en las cetonas aromáticas como la benzofenona y la acetofenona, las reacciones de \textbf{acoplamiento} ($15{,}0\%$, incluyendo acilaciones de Friedel-Crafts y acoplamientos cruzados catalizados por paladio) adquieren un papel determinante.
+
+\subsection{Influencia del Medio de Reacción y Condiciones Experimentales}
+La naturaleza del medio de reacción mostró una estrecha relación con el rol desempeñado por el grupo carbonilo (Cuadro~\ref{tab:medios}). En conjunto, los medios básicos ($34{,}5\%$), ácidos ($32{,}5\%$) y neutros ($31{,}0\%$) presentan una distribución equilibrada en la muestra global, mientras que los medios estrictamente apolares representan apenas el $2{,}0\%$.
+
+\begin{table}[h]
+  \centering
+  \caption{Frecuencia del medio de reacción según el rol del compuesto carbonílico.}
+  \label{tab:medios}
+  \footnotesize
+  \begin{tabular}{l c c c}
+    \toprule
+    \textbf{Medio de Reacción} & \textbf{Reacciones} & \textbf{Obtenciones} & \textbf{Total (\%)} \\
+    \midrule
+    Básico & 37 & 32 & 69 (34,5\%) \\
+    Ácido & 43 & 22 & 65 (32,5\%) \\
+    Neutro & 19 & 43 & 62 (31,0\%) \\
+    Apolar & 1 & 3 & 4 (2,0\%) \\
+    \midrule
+    \textbf{Total} & \textbf{100} & \textbf{100} & \textbf{200 (100\%)} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Al desagregar por rol, se observa que el $80{,}0\%$ de las reacciones donde el carbonilo actúa como sustrato requieren catálisis \textbf{ácida} ($43{,}0\%$) o \textbf{básica} ($37{,}0\%$). Esto responde directamente a la termodinámica de la adición nucleofílica: en medio ácido, la protonación del oxígeno carbonílico ($\mathrm{R_2C=O^+H}$) incrementa drásticamente la electrofilia del carbono frente a nucleófilos débiles (alcoholes, agua, aminas); en medio básico, se potencia la fuerza nucleofílica del reactivo atacante o se facilita la desprotonación del carbono $\alpha$ para generar enolatos reactivos \cite{Clayden2012, Carey2014}. En contraste, las rutas de obtención ocurren mayoritariamente en \textbf{medio neutro} ($43{,}0\%$), lo cual es consistente con procesos de oxidación aeróbica catalítica, termólisis y acoplamientos organometálicos donde se evita la sobrerreacción u oxidación ulterior de los aldehídos hacia ácidos carboxílicos.
+
+% --- 5. CONCLUSIONES Y PERSPECTIVA ---
+\section{Conclusiones y Perspectiva}
+La sistematización de propiedades fisicoquímicas y el análisis de 200 reacciones trazables en CAS SciFinder permitieron establecer correlaciones estructura-reactividad sólidas para los diez compuestos carbonílicos evaluados:
+\begin{enumerate}
+  \item \textbf{Comportamiento Fisicoquímico y Ambiental:} El incremento del peso molecular y la presencia de anillos aromáticos conjugados determinan una disminución exponencial en la presión de vapor y en la solubilidad acuosa. Mientras el formaldehído, acetaldehído y acetona presentan alta movilidad en fase vapor y elevada miscibilidad en agua, las especies aromáticas (benzofenona y cinamaldehído) tienden a particionarse hacia fases orgánicas y sedimentos.
+  \item \textbf{Dualidad Mecanística:} La reactividad de los aldehídos y cetonas como sustratos está gobernada en un $82{,}0\%$ por reacciones de adición nucleofílica catalizadas por ácidos ($43{,}0\%$) o bases ($37{,}0\%$), mientras que su obtención se fundamenta en oxidaciones selectivas ($38{,}0\%$) y eliminaciones ($18{,}0\%$) ejecutadas predominantemente en medio neutro ($43{,}0\%$).
+  \item \textbf{Perspectiva Futura:} Los datos consolidados constituyen una herramienta de referencia para modelar rutas de degradación abiótica de compuestos orgánicos volátiles oxigenados (OVOCs) en matrices ambientales y para optimizar la selección de catalizadores y disolventes más benignos en procesos de síntesis orgánica sostenible.
+\end{enumerate}
+
+% --- 6. DECLARACIÓN ---
+\section{Declaración}
+\noindent\textbf{Conflicto de intereses:} Los autores declaran que no existen conflictos de intereses financieros, académicos ni personales que puedan haber influido en el desarrollo o los resultados del presente trabajo. \\ [0.15cm]
+\noindent\textbf{Contribución de los autores:} \textit{Construcción de la base de datos en tablas y gestión del repositorio en GitHub:} Todos los autores (Juan Pablo Vargas, Moisés David Acuña Salas, Maira Alejandra Candela Useche, Lenin Mauricio Veloza Plata y Gabriela Alejandra González López). \textit{Procesamiento y análisis estadístico en Google Colab:} Juan Pablo Vargas y Lenin Mauricio Veloza Plata. \textit{Visualización interactiva de datos en Power BI:} Moisés David Acuña Salas, Lenin Mauricio Veloza Plata y Juan Pablo Vargas. \textit{Maquetación, redacción y compilación en LaTeX:} Gabriela Alejandra González López y Maira Alejandra Candela Useche. \textit{Correspondencia y envío del manuscrito:} Lenin Mauricio Veloza Plata.
+
+% --- REFERENCIAS BIBLIOGRÁFICAS ACADÉMICAS (ESTILO IEEE NUMERADO) ---
+\begin{thebibliography}{9}
+
+\bibitem{Clayden2012}
+J. Clayden, N. Greeves, and S. Warren, \textit{Organic Chemistry}, 2nd ed. Oxford, U.K.: Oxford University Press, 2012.
+
+\bibitem{Carey2014}
+F. A. Carey and R. M. Giuliano, \textit{Química Orgánica}, 9.ª ed. México D.F., México: McGraw-Hill Interamericana, 2014.
+
+\bibitem{McMurry2016}
+J. McMurry, \textit{Organic Chemistry}, 9th ed. Boston, MA, USA: Cengage Learning, 2016.
+
+\bibitem{Wade2017}
+L. G. Wade, \textit{Química Orgánica}, vol. 2, 9.ª ed. Ciudad de México, México: Pearson Educación, 2017.
+
+\bibitem{Atkinson2000}
+R. Atkinson, ``Atmospheric chemistry of VOCs and $\mathrm{NO_x}$,'' \textit{Atmospheric Environment}, vol. 34, no. 12--14, pp. 2063--2101, 2000.
+
+\bibitem{Smith2020}
+M. B. Smith, \textit{March's Advanced Organic Chemistry: Reactions, Mechanisms, and Structure}, 8th ed. Hoboken, NJ, USA: John Wiley \& Sons, 2020.
+
+\bibitem{Haynes2016}
+W. M. Haynes, Ed., \textit{CRC Handbook of Chemistry and Physics}, 97th ed. Boca Raton, FL, USA: CRC Press, 2016.
+
+\bibitem{Warr2011}
+W. A. Warr, ``Representation of chemical structures,'' \textit{Wiley Interdisciplinary Reviews: Computational Molecular Science}, vol. 1, no. 4, pp. 557--579, 2011.
+
+\end{thebibliography}
+
+\end{document}
