@@ -12,7 +12,6 @@ El proyecto está organizado en los siguientes entregables principales dentro de
 * `Analisis_graficoV3.ipynb`: Cuaderno de Jupyter (Python) utilizado para la limpieza exploratoria, análisis estadístico y generación de gráficas de correlación.
 * `PRESENTACION DE REACCIONES.pbix`: Informe interactivo desarrollado en Microsoft Power BI para la exploración multivariable de mecanismos, solventes y propiedades moleculares.
 * `proyecto.pdf`: Documento técnico final compilado con la metodología, análisis de resultados y conclusiones del estudio.
-* `proyecto codigo.txt`: Código fuente en LaTeX correspondiente a la maquetación del informe técnico.
 * `README.md`: Documentación general y guía de arquitectura del repositorio.
 
 ---
@@ -58,9 +57,6 @@ El archivo `PRESENTACION DE REACCIONES.pbix` se alimenta de un dataset estructur
    * Abrir `PRESENTACION DE REACCIONES.pbix`.
    * Ir a **Transformar datos > Configuración de origen de datos** en Power Query.
    * Actualizar la ruta de origen apuntando al archivo CSV limpio correspondiente en el directorio local.
-
-### Compilación de Documentación (LaTeX)
-* El archivo `proyecto codigo.txt` contiene el código fuente completo listo para ser compilado en cualquier distribución TeX estándar (TeX Live, MiKTeX u Overleaf) para regenerar `proyecto.pdf`.
 
 ## Autores
 
